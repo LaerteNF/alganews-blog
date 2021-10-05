@@ -65,7 +65,7 @@ export const getServerSideProps : GetServerSideProps<HomeProps> = async ({query,
 
   const {page: _page} = query
 
-  const page = Number(_page)
+  const page = _page ? Number(_page) : 1;
 
   // se o parametro page passado na query string da url não for um numero ou menor que 1
   if( isNaN(page) || page < 1){
